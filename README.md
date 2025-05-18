@@ -47,7 +47,29 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+#include <stdio.h>
+
+unsigned long long calculateProduct(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * calculateProduct(n - 1); 
+}
+
+int main() {
+    int n = 12;  
+    unsigned long long product;
+
+    product = calculateProduct(n);
+
+    printf("The product of the first 12 natural numbers is: %llu\n", product);
+
+    return 0;
+}
+
 ## OUTPUT:
+![Screenshot 2025-05-18 163959](https://github.com/user-attachments/assets/3ad90ada-f040-4360-8cfb-775ef00b7e53)
+
          		
 ## RESULT:
 
@@ -70,16 +92,38 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
+#include <stdio.h>
 
+#define ROWS 3
+#define COLS 4
+
+int main() {
+    int matrix[ROWS][COLS] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+
+    for (int i = 0; i < ROWS; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < COLS; j++) {
+            rowSum += matrix[i][j];
+        }
+
+        printf("Sum of row %d = %d\n", i + 1, rowSum);
+    }
+
+    return 0;
+}
 
 
 ## OUTPUT
 
+![Screenshot 2025-05-18 164253](https://github.com/user-attachments/assets/08916814-7556-4b5d-9d07-0c3ea37e4a6f)
 
  
- 
-
- ## RESULT
+## RESULT
+Thus the C program to String process executed successfully
  
 
 
@@ -98,9 +142,39 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+#include <stdio.h>
+#include <string.h>
 
+int main() {
+    char str[100];
+    int num_rows;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Enter number of rows: ");
+    scanf("%d", &num_rows);
+
+    int len = strlen(str);
+    int midpoint = (2 * num_rows - 1) / 2;  
+
+    for (int i = 0; i < num_rows; i++) {
+        for (int s = 0; s < num_rows - i - 1; s++) {
+            printf("  ");  
+        }
+
+        for (int j = 0; j < 2 * i + 1; j++) {
+            printf("%c ", str[j % len]);  
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
 
  ## OUTPUT
+![Screenshot 2025-05-18 164954](https://github.com/user-attachments/assets/ecf1a78d-2b0e-4147-a7f8-579eb06efbfe)
 
  
 
@@ -134,10 +208,22 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+#include<stdio.h> 
+int main() 
+{ 
+int i,n; 
+int arr[10],*parr=arr; 
+scanf("%d",&n); 
+for(i=0;i<n;i++) 
+scanf("%d",parr+i); 
+for(i=0;i<n;i++) 
+printf("the elements are %d\n",*(parr+i)); 
+return 0; 
+}
 
 ## OUTPUT
+![Screenshot 2025-05-18 165423](https://github.com/user-attachments/assets/652b99b6-a579-4f32-8c46-6c7c56afbd05)
 
- 
 
 ## RESULT
 
