@@ -9,19 +9,21 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
+# include<stdio.h> 
+int main() 
+{ 
+float a,*b=&a; 
+scanf("%f",&a); 
+int ans,*val=&ans; 
+*val=(int)*b; 
+printf("the integer equivalent of %.2f =%d",a,*val); 
+} 
+
+
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/539ed4c5-5d1b-47a2-a075-705921336af6)
  	
-
-
-
-
-
-
-
-
-
-
 
 ## RESULT:
 Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
